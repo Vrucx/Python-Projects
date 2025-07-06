@@ -8,15 +8,12 @@ def print_board(board):
             print("-" * 9)
 
 def check_winner(board, player):
-    # Check rows
     for row in board:
         if all(s == player for s in row):
             return True
-    # Check cols
     for col in range(3):
         if all(board[row][col] == player for row in range(3)):
             return True
-    # Check diagonals
     if all(board[i][i] == player for i in range(3)):
         return True
     if all(board[i][2 - i] == player for i in range(3)):
